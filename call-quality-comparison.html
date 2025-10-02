@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Quality Audio Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f7;
+            padding: 20px;
+            color: #1d1d1f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1d1d1f;
+        }
+
+        .subtitle {
+            color: #6e6e73;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .network-section {
+            margin-bottom: 40px;
+            border: 1px solid #e5e5e7;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .network-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .network-content {
+            padding: 20px;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .app-card {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e7;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .app-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+        }
+
+        .file-info {
+            font-size: 12px;
+            color: #86868b;
+            margin-top: 8px;
+        }
+
+        .no-data {
+            color: #86868b;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .legend {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .legend-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .legend-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #6e6e73;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Call Quality Audio Comparison</h1>
+        <p class="subtitle">Compare audio quality across Hiya AI Phone, WhatsApp, and Signal under various network conditions</p>
+
+        <div class="legend">
+            <div class="legend-title">Apps Being Tested:</div>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <img src="Hiya AI Phone Icon.jpg" alt="Hiya AI Phone" class="app-icon">
+                    <span>Hiya AI Phone</span>
+                </div>
+                <div class="legend-item">
+                    <img src="Whats App Icon.jpg" alt="WhatsApp" class="app-icon">
+                    <span>WhatsApp</span>
+                </div>
+                <div class="legend-item">
+                    <img src="Signal Icon.png" alt="Signal" class="app-icon">
+                    <span>Signal</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Without Restrictions Section -->
+        <div class="network-section">
+            <div class="network-header">
+                ✓ Normal Network - No Restrictions
+            </div>
+            <div class="network-content">
+                <div class="app-grid">
+                    <!-- Hiya AI Phone -->
+                    <div class="app-card">
+                        <div class="app-name">
+                            <img src="Hiya AI Phone Icon.jpg" alt="Hiya AI Phone" class="app-icon">
+                            Hiya AI Phone
+                        </div>
+                        <audio controls>
+                            <source src="Hiya AI Phone - Without Restrictions .m4a" type="audio/mp4">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="file-info">File: Hiya AI Phone - Without Restrictions .m4a</div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="app-card">
+                        <div class="app-name">
+                            <img src="Whats App Icon.jpg" alt="WhatsApp" class="app-icon">
+                            WhatsApp
+                        </div>
+                        <audio controls>
+                            <source src="Whats App - Without Restrictions .m4a" type="audio/mp4">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="file-info">File: Whats App - Without Restrictions .m4a</div>
+                    </div>
+
+                    <!-- Signal -->
+                    <div class="app-card">
+                        <div class="app-name">
+                            <img src="Signal Icon.png" alt="Signal" class="app-icon">
+                            Signal
+                        </div>
+                        <audio controls>
+                            <source src="Signal - Without Restrictions .m4a" type="audio/mp4">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="file-info">File: Signal - Without Restrictions .m4a</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Throttling Section (Placeholder) -->
+        <div class="network-section">
+            <div class="network-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                ⚠️ Network Throttling - Coming Soon
+            </div>
+            <div class="network-content">
+                <div class="no-data">Audio samples will be added once testing is complete</div>
+            </div>
+        </div>
+
+        <!-- Packet Loss Section (Placeholder) -->
+        <div class="network-section">
+            <div class="network-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                📉 High Packet Loss - Coming Soon
+            </div>
+            <div class="network-content">
+                <div class="no-data">Audio samples will be added once testing is complete</div>
+            </div>
+        </div>
+
+        <!-- High Latency Section (Placeholder) -->
+        <div class="network-section">
+            <div class="network-header" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                ⏱️ High Latency - Coming Soon
+            </div>
+            <div class="network-content">
+                <div class="no-data">Audio samples will be added once testing is complete</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
